@@ -11,6 +11,11 @@ const findSensorById = (req, res) => {
       console.log(error);
     });
 };
+const getAllSensors = (req, res) => {
+sensorController.findAllSensors().then((data) => {
+    res.status(200).json(data);
+  });
+};
 
 const postNewSensor = (req, res) => {
   const sensorObj = req.body;
@@ -59,6 +64,7 @@ const deleteSensors = (req, res) => {
 };
 module.exports = {
   findSensorById,
+  getAllSensors,
   postNewSensor,
   patchSensor,
   deleteSensors

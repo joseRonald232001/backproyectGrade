@@ -2,11 +2,10 @@ const { DataTypes } = require("sequelize");
 const db = require("../utils/database");
 
 const Sensors = db.define("sensor",{
-id: {
- type:DataTypes.INTEGER,
-  autoIncrement:true,
-  primaryKey: true,
-      },
+  id: {
+    type: DataTypes.UUID,
+    primaryKey: true,
+  },
   name: {
     type: DataTypes.STRING,
     allowNull: false
