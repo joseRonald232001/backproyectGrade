@@ -18,8 +18,14 @@ db.authenticate()
 db.sync()
   .then(() => console.log("Database Synced!"))
   .catch((err) => console.log(err));
+  
 
-
+  
+  app.use((req, res, next) => {
+    console.log(`Solicitud recibida: ${req.method} ${req.url}`);
+    next();
+  });
+  
 app.use(express.json());
 app.use(cors());
 
@@ -33,6 +39,6 @@ app.get('/', (req, res) => {
   res.send('¡Hola! Esto es una respuesta desde el servidor.');
 });
 
-app.listen(PORT, () => {
+app.listen(PORT,'0.0.0.0', () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
