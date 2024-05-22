@@ -3,14 +3,11 @@ const userServices =require('./users.services');
 const jwtPassport=require("../middlewares/passport.middleware")
 
 
-router.route('/allusers')
-.get(userServices.getAllUsers);
-
-router.route('/newuser')
+router.route('/users')
+.get(userServices.getAllUsers)
 .post(userServices.postNewUser);
 
-router.route("/user/:id")
-  .get(userServices.getUserById);
+
 
 router.route('/me')
 .get(jwtPassport.authenticate("jwt",{session:false}),userServices.getMyUser)

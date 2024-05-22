@@ -1,5 +1,3 @@
-//! const dotenv = require('dotenv')
-//! dotenv.config()
 
 require("dotenv").config();
 
@@ -11,7 +9,7 @@ const config = {
       dialect: "postgres",
       host: "localhost",
       port: 5432,
-      database: "proyectofinal",
+      database: "minimarket",
       username: "postgres",
       password: "root",
       //Extra configs

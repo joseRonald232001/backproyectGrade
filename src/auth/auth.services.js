@@ -5,6 +5,7 @@ require('dotenv').config();
 
 
 const postLogin = (req, res) => {
+  
   const { email, password } = req.body;
   checkUserCredentials(email, password)
     .then((data) => {
